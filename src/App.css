@@ -36,3 +36,56 @@
     transform: rotate(360deg);
   }
 }
+
+.response-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+/* This styles the select drop down menu in a modern look */
+.topic-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  width: auto;
+  /* color: white; */
+}
+
+.topic-form label {
+  display: block;
+  margin: 0.5em 0;
+}
+.topic-form select {
+  text-align: center;
+  display: block;
+  width: 100%;
+  padding: 0.5em;
+  margin-bottom: 1em;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 0.25em;
+  box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.04);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: #fff;
+}
+.submit {
+  display: block;
+  width: 100%;
+  padding: 0.5em;
+  font-size: 0.7em;
+  border: 1px solid #ccc;
+  border-radius: 0.25em;
+  box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.04);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: #fff;
+}
