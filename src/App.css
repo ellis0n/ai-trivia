@@ -4,7 +4,7 @@
 }
 
 html {
-  background-color: #d3f3ee;
+  background-color: #779fa1;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -21,11 +21,11 @@ html {
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: 779FA1;
 }
 
 .App-link {
-  color: #61dafb;
+  color: #779fa1;
 }
 
 @keyframes App-logo-spin {
@@ -97,11 +97,12 @@ html {
   color: black;
   margin: 0.5em;
   font-weight: 800;
-  background-color: #bc2c1a;
+  background-color: #6b0f1a;
+  border-radius: 8px;
 }
 
 .question-wrapper h1 {
-  color: #d3f3ee;
+  color: #f7f0f5;
   padding: 0.5em;
   font-size: calc(10px + 4vmin);
 }
@@ -114,6 +115,11 @@ html {
   font-size: calc(10px + 2vmin);
 }
 
+.answer-wrapper:hover {
+  background-color: #6b0f1a;
+  border-radius: 8px;
+}
+
 .answer-wrapper {
   display: flex;
   flex-direction: column;
@@ -121,12 +127,13 @@ html {
   justify-content: center;
   font-size: calc(10px + 2vmin);
   margin: 0.5em;
-  border: 2px solid #dacc3e;
-  background-color: #dacc3e;
+  border: 2px solid #f7f0f518;
+  border-radius: 8px;
+  background-color: #313e50;
 }
 
 .answer-wrapper p {
-  color: #7d1538;
+  color: #f7f0f5;
   padding: 0.5em;
   margin: 20px;
 }

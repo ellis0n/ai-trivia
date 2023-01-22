@@ -40,8 +40,8 @@ const Question = ({ question }) => {
         <h1>{data.q}</h1>
       </div>
       <div className="choice-wrapper">
-        {order.map((choice) => (
-          <Answer data={choice} confirm={checkAnswer} />
+        {order.map((choice, i) => (
+          <Answer key={i} data={choice} confirm={checkAnswer} />
         ))}
       </div>
     </>
