@@ -1,13 +1,14 @@
-import logo from "./logo.svg";
 import "./App.css";
 import Wrapper from "./components/Wrapper";
+import Header from "./components/Header";
 
 function App() {
-  return (
-    <div className="App">
-      <Wrapper />
-    </div>
-  );
+	return (
+		<div className="App">
+			<Header />
+			<Wrapper />
+		</div>
+	);
 }
 
 export default App;
