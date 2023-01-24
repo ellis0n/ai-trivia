@@ -1,12 +1,12 @@
 import "./App.css";
-import Wrapper from "./components/Wrapper";
+import TriviaWrapper from "./components/TriviaWrapper";
 import Header from "./components/Header";
 
 function App() {
 	return (
 		<div className="App">
 			<Header />
-			<Wrapper />
+			<TriviaWrapper />
 		</div>
 	);
 }

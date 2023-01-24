@@ -3,11 +3,20 @@ import Question from "./Question";
 import Form from "./Form";
 import axios from "axios";
 
-const Wrapper = () => {
-	const [topic, setTopic] = useState("");
+const TriviaWrapper = () => {
 	const [question, setQuestion] = useState("");
 	const [showQuestion, setShowQuestion] = useState(false);
 	const [showForm, setShowForm] = useState(true);
+
+	const data = [
+		"Politics",
+		"Sports",
+		"Entertainment",
+		"Business",
+		"Technology",
+		"Science",
+		"Health",
+	];
 
 	const getTopic = async (topic) => {
 		try {
@@ -24,7 +33,9 @@ const Wrapper = () => {
 
 	return (
 		<>
-			{showForm ? <Form getTopic={getTopic} /> : null}
+			{showForm ? (
+				<Form handleClick={getTopic} data={data} label={"Pick a topic"} />
+			) : null}
 
 			{showQuestion ? (
 				<>
@@ -35,4 +46,4 @@ const Wrapper = () => {
 	);
 };
 
-export default Wrapper;
+export default TriviaWrapper;
