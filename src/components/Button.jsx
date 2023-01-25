@@ -22,7 +22,9 @@ const Button = ({ text, handleClick, theme }) => {
     <StyledButton
       type="submit"
       onClick={(e) => {
-        handleClickWithPrevent(e);
+        if (typeof handleClick === "function") {
+          handleClickWithPrevent(e);
+        }
       }}
       buttonTheme={theme}
     >
