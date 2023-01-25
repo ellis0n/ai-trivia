@@ -7,12 +7,16 @@ import axios from "axios";
 import styled from "styled-components";
 
 const QuizForm = styled.form`
-  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   font-size: calc(10px + 2vmin);
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: 600;
-  margin: 0;
-  padding: 0;
+  width: auto;
+  margin: 0 12.5%;
+  padding: 1em;
+  background-color: #313e5080;
+  border-radius: 8px;
   select {
     text-align: center;
     width: auto;
