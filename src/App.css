@@ -1,83 +1,83 @@
 .App {
-	text-align: center;
-	font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 html {
-	background-color: #779fa1;
+  background-color: #779fa1;
 }
 
 .App-link {
-	color: #779fa1;
+  color: #779fa1;
 }
 
 @keyframes App-logo-spin {
-	from {
-		transform: rotate(0deg);
-	}
-	to {
-		transform: rotate(360deg);
-	}
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* HEADER */
 .header-wrapper {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	font-size: calc(10px + 2vmin);
-	color: white;
-	margin: 0.5em;
-	font-weight: 800;
-	background-color: #6b0f1a;
-	border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  margin: 0.5em;
+  font-weight: 800;
+  background-color: #6b0f1a;
+  border-radius: 8px;
 }
 
 /* TOPIC SELECTION */
 
 .topic-form {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	font-size: calc(10px + 2vmin);
-	width: auto;
-	margin: 0 12.5%;
-	padding: 1em;
-	background-color: #313e5080;
-	border-radius: 8px;
+  /* display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  width: auto;
+  margin: 0 12.5%;
+  padding: 1em;
+  background-color: #313e5080;
+  border-radius: 8px; */
 }
 
 .topic-form label {
-	color: white;
-	font-size: calc(10px + 2vmin);
-	font-family: Arial, Helvetica, sans-serif;
-	font-weight: 600;
-	margin: 0;
-	padding: 0;
+  /* color: white;
+  font-size: calc(10px + 2vmin);
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  margin: 0;
+  padding: 0; */
 }
 
 .topic-form select {
-	text-align: center;
-	width: auto;
-	padding: 0.5em;
-	margin: 1em;
-	font-size: 1em;
-	border: 1px solid #ccc;
-	border-radius: 0.25em;
-	/* box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.04);
+  text-align: center;
+  width: auto;
+  padding: 0.5em;
+  margin: 1em;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 0.25em;
+  /* box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.04);
 	-webkit-appearance: none;
 	-moz-appearance: none; */
-	/* appearance: none; */
+  /* appearance: none; */
 }
 
 .user-input {
-	overflow: auto;
-	resize: both;
-	/* display: inline-block; */
+  overflow: auto;
+  resize: both;
+  /* display: inline-block; */
 
-	/* padding: 0;
+  /* padding: 0;
 	margin: 0;
 	white-space: nowrap;
 
@@ -87,74 +87,74 @@ html {
 	display: flex;
 	flex-direction: column;
 	/* align-items: center; */
-	/* justify-content: center; */
-	font-size: calc(10px + 2vmin);
+  /* justify-content: center; */
+  font-size: calc(10px + 2vmin);
 }
 
 /* QUESTION SELECTION & DISPLAY */
 
 .question-wrapper {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	font-size: calc(10px + 2vmin);
-	color: black;
-	margin: 0.5em;
-	font-weight: 800;
-	background-color: #6b0f1a;
-	border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: black;
+  margin: 0.5em;
+  font-weight: 800;
+  background-color: #6b0f1a;
+  border-radius: 8px;
 }
 
 .question-wrapper h1 {
-	color: #f7f0f5;
-	padding: 0.5em;
-	font-size: calc(10px + 4vmin);
+  color: #f7f0f5;
+  padding: 0.5em;
+  font-size: calc(10px + 4vmin);
 }
 
 .choice-wrapper {
-	display: grid;
+  /* display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	grid-template-rows: repeat(2, 1fr);
 	grid-gap: 8px;
 	align-items: center;
 	/* justify-content: center; */
-	font-size: calc(10px + 2vmin);
+  /* font-size: calc(10px + 2vmin);
 	flex-wrap: wrap;
-	padding: 0 6%;
+	padding: 0 6%; */
 }
 
 .choice-card {
-	width: 100%;
-	height: auto;
-	display: flex;
-	/* flex-direction: column; */
-	/* align-items: center; */
-	justify-content: center;
-	font-size: calc(10px + 2vmin);
-	/* margin: 0.5em; */
-	border: 2px solid #f7f0f518;
-	border-radius: 8px;
-	background-color: #313e50;
+  width: 100%;
+  height: auto;
+  display: flex;
+  /* flex-direction: column; */
+  /* align-items: center; */
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  /* margin: 0.5em; */
+  border: 2px solid #f7f0f518;
+  border-radius: 8px;
+  background-color: #313e50;
 }
 
 .choice-card:hover {
-	background-color: #282c34b8;
-	border-radius: 8px;
+  background-color: #282c34b8;
+  border-radius: 8px;
 }
 
 .choice-card p {
-	color: #f7f0f5;
-	/* padding: 0.5em; */
-	/* margin: 20px; */
+  color: #f7f0f5;
+  /* padding: 0.5em; */
+  /* margin: 20px; */
 }
 
 .submit-btn {
-	display: block;
-	/* width: 100%; */
-	padding: 0.5em;
-	margin: 0.5em;
-	font-size: 0.7em;
-	border: 1px solid #ccc;
-	border-radius: 0.25em;
+  display: block;
+  /* width: 100%; */
+  padding: 0.5em;
+  margin: 0.5em;
+  font-size: 0.7em;
+  border: 1px solid #ccc;
+  border-radius: 0.25em;
 }
