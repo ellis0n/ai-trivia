@@ -8,9 +8,12 @@ const StyledButton = styled.button`
   font-size: 0.7em;
   border: 1px solid #ccc;
   border-radius: 0.25em;
+  cursor: pointer;
+  color: ${(props) =>
+    props.buttonTheme === "answerButton" ? "blue" : "black"};
 `;
 
-const Button = ({ text, handleClick }) => {
+const Button = ({ text, handleClick, theme }) => {
   const handleClickWithPrevent = (e) => {
     e.preventDefault();
     handleClick();
@@ -21,6 +24,7 @@ const Button = ({ text, handleClick }) => {
       onClick={(e) => {
         handleClickWithPrevent(e);
       }}
+      buttonTheme={theme}
     >
       {text}
     </StyledButton>
