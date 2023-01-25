@@ -1,11 +1,30 @@
 import React from "react";
+import styled from "styled-components";
+const StyledButton = styled.button`
+  display: block;
+  /* width: 100%; */
+  padding: 0.5em;
+  margin: 0.5em;
+  font-size: 0.7em;
+  border: 1px solid #ccc;
+  border-radius: 0.25em;
+`;
 
-const Button = ({ className, text, handleClick }) => {
-	return (
-		<button className={className} type="submit" onClick={handleClick}>
-			{text}
-		</button>
-	);
+const Button = ({ text, handleClick }) => {
+  const handleClickWithPrevent = (e) => {
+    e.preventDefault();
+    handleClick();
+  };
+  return (
+    <StyledButton
+      type="submit"
+      onClick={(e) => {
+        handleClickWithPrevent(e);
+      }}
+    >
+      {text}
+    </StyledButton>
+  );
 };
 
 export default Button;
