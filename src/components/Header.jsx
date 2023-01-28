@@ -2,20 +2,28 @@ import React from "react";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-  margin: 0.5em;
-  font-weight: 800;
-  background-color: #6b0f1a;
-  border-radius: 8px;
+	a {
+		text-decoration: unset;
+		color: unset;
+	}
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	font-size: calc(32px + 3vmin);
+	color: #ededf4f1;
+	font-weight: 800;
+	border-bottom: 2px solid #ededf482;
+	background-color: #433c3855;
+	margin-bottom: 1em;
 `;
 
 const Header = () => {
-  return <Wrapper>AI Trivia</Wrapper>;
+	return (
+		<Wrapper>
+			<a href="/">Quiz Me</a>
+		</Wrapper>
+	);
 };
 
 export default Header;
