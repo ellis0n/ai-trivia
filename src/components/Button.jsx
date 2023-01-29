@@ -19,6 +19,10 @@ const StyledButton = styled.button`
 				return "#8A817C";
 			case "form-btn":
 				return "white";
+			case "correct-btn":
+				return "green";
+			case "wrong-btn":
+				return "red";
 			default:
 				return "red";
 		}
@@ -37,7 +41,7 @@ const StyledButton = styled.button`
 				case "form-btn":
 					return "white";
 				default:
-					return "red";
+					return "";
 			}
 		}};
 		color: ${({ theme }) => {
@@ -56,7 +60,11 @@ const StyledButton = styled.button`
 const Button = ({ text, handleClick, theme }) => {
 	const handleClickWithPrevent = (e) => {
 		e.preventDefault();
-		handleClick();
+		if (handleClick.length > 0) {
+			handleClick(e);
+		} else {
+			handleClick();
+		}
 	};
 	return (
 		<StyledButton
