@@ -26,10 +26,18 @@ const ChoiceWrapper = styled.div`
 	flex-wrap: wrap;
 	margin: 0.5em;
 `;
+const ScoreWrapper = styled.div`
+	justify-content: center;
+	color: white;
+	border: 2px solid white;
+	border-radius: 8px;
+	margin: 0 6em;
+`;
 
-const Question = ({ question }) => {
+const Question = ({ question, scoreHandler, score, getTopic }) => {
 	const [answer, setAnswer] = useState(null);
 	const [order, setOrder] = useState([]);
+
 	let data = JSON.parse(question);
 
 	const array = [data.a, data.w1, data.w2, data.w3];
@@ -47,10 +55,18 @@ const Question = ({ question }) => {
 
 	const checkAnswer = (e) => {
 		setAnswer(e.target.innerText);
+		if (answer === data.a) {
+			scoreHandler(true);
+		} else {
+			scoreHandler(false);
+		}
 	};
 
 	return (
 		<>
+			<ScoreWrapper>
+				<h1>Score: {score}</h1>
+			</ScoreWrapper>
 			<QuestionWrapper>
 				<h1>{data.q}</h1>
 			</QuestionWrapper>

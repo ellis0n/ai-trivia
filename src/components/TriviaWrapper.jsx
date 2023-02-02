@@ -44,16 +44,7 @@ const TriviaWrapper = () => {
 	const [question, setQuestion] = useState("");
 	const [showQuestion, setShowQuestion] = useState(false);
 	const [showForm, setShowForm] = useState(true);
-
-	const data = [
-		"Politics",
-		"Sports",
-		"Entertainment",
-		"Business",
-		"Technology",
-		"Science",
-		"Health",
-	];
+	const [score, setScore] = useState(0);
 
 	const getTopic = async () => {
 		try {
@@ -68,9 +59,9 @@ const TriviaWrapper = () => {
 		}
 	};
 
-	// const handleSelect = (selected) => {
-	// 	setTopic(selected);
-	// };
+	const scoreHandler = (bool) => {
+		if (bool) setScore(score + 1);
+	};
 
 	return (
 		<>
@@ -92,7 +83,12 @@ const TriviaWrapper = () => {
 
 			{showQuestion ? (
 				<>
-					<Question question={question} />
+					<Question
+						question={question}
+						scoreHandler={scoreHandler}
+						score={score}
+						getTopic={getTopic}
+					/>
 				</>
 			) : null}
 		</>
