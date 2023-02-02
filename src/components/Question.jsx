@@ -28,9 +28,8 @@ const ChoiceWrapper = styled.div`
 `;
 
 const Question = ({ question }) => {
-	const [answer, setAnswer] = useState("");
+	const [answer, setAnswer] = useState(null);
 	const [order, setOrder] = useState([]);
-	const [confirm, setConfirm] = useState(false);
 	let data = JSON.parse(question);
 
 	const array = [data.a, data.w1, data.w2, data.w3];
@@ -47,17 +46,7 @@ const Question = ({ question }) => {
 	}, []);
 
 	const checkAnswer = (e) => {
-		confirmChoice();
 		setAnswer(e.target.innerText);
-		if (answer === data.a) {
-			console.log("correct");
-		} else {
-			console.log("incorrect");
-		}
-	};
-
-	const confirmChoice = () => {
-		console.log("confirm");
 	};
 
 	return (
@@ -71,7 +60,13 @@ const Question = ({ question }) => {
 						key={i}
 						text={choice}
 						handleClick={checkAnswer}
-						theme="answer-btn"
+						theme={
+							answer && choice === data.a
+								? "correct-btn"
+								: answer && choice !== data.a
+								? "wrong-btn"
+								: "answer-btn"
+						}
 					/>
 				))}
 			</ChoiceWrapper>

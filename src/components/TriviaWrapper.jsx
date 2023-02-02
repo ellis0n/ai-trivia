@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Question from "./Question";
-import Select from "./Select";
+// import Select from "./Select";
 import Input from "./Input";
 import Button from "./Button";
 import axios from "axios";
@@ -68,9 +68,9 @@ const TriviaWrapper = () => {
 		}
 	};
 
-	const handleSelect = (selected) => {
-		setTopic(selected);
-	};
+	// const handleSelect = (selected) => {
+	// 	setTopic(selected);
+	// };
 
 	return (
 		<>
