@@ -26,13 +26,24 @@ const ChoiceWrapper = styled.div`
 	flex-wrap: wrap;
 	margin: 0.5em;
 `;
+const ScoreWrapper = styled.div`
+	justify-content: center;
+	color: #fffffff4;
+	background-color: #433c38;
+	border: 2px solid #ededf482;
+	border-radius: 8px;
+	margin: 0 4em;
+`;
 
-const Question = ({ question }) => {
+const Question = ({ question, scoreHandler, score }) => {
 	const [answer, setAnswer] = useState(null);
 	const [order, setOrder] = useState([]);
+	const [currentScore, setCurrentScore] = useState(score);
+
 	let data = JSON.parse(question);
 
 	const array = [data.a, data.w1, data.w2, data.w3];
+	console.log(array);
 
 	useEffect(() => {
 		const shuffle = (array) => {
@@ -47,10 +58,18 @@ const Question = ({ question }) => {
 
 	const checkAnswer = (e) => {
 		setAnswer(e.target.innerText);
+		if (e.target.innerText === data.a) {
+			scoreHandler(true);
+		} else {
+			scoreHandler(false);
+		}
 	};
 
 	return (
 		<>
+			<ScoreWrapper>
+				<h1>Score: {score}</h1>
+			</ScoreWrapper>
 			<QuestionWrapper>
 				<h1>{data.q}</h1>
 			</QuestionWrapper>
