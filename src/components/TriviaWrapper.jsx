@@ -45,7 +45,7 @@ const QuizForm = styled.form`
 const TriviaWrapper = () => {
     const [topic, setTopic] = useState('')
     const [question, setQuestion] = useState('')
-    const [score, setScore] = useState(0)
+    const [score, setScore] = useState([{ correct: 0, incorrect: 0 }])
     const [showQuestion, setShowQuestion] = useState(false)
     const [showForm, setShowForm] = useState(true)
     const [loading, setLoading] = useState(false)
@@ -54,22 +54,35 @@ const TriviaWrapper = () => {
         setLoading(true)
         setShowForm(false)
         try {
-            const res = await axios.post('http://localhost:3500/query', {
-                topic,
-            })
-            setQuestion(res.data.response)
+            if (score[0].correct + score[0].incorrect < 3) {
+                const res = await axios.post('http://localhost:3500/query', {
+                    topic,
+                })
+                setQuestion(res.data.response)
 
-            setShowQuestion(true)
-            setLoading(false)
-            setShowForm(false)
+                setShowQuestion(true)
+                setLoading(false)
+                setShowForm(false)
+            } else {
+                setTopic('')
+                setScore([{ correct: 0, incorrect: 0 }])
+                setQuestion('')
+                setShowForm(true)
+                setLoading(false)
+            }
         } catch (error) {
             console.error(error)
         }
     }
 
     const scoreHandler = (result) => {
+        console.log(score)
         if (result) {
-            setScore(score + 1)
+            setScore([{ correct: score[0].correct + 1, incorrect: score[0].incorrect }])
+            console.log(score)
+        }
+        if (!result) {
+            setScore([{ correct: score[0].correct, incorrect: score[0].incorrect + 1 }])
         }
         setTimeout(() => {
             setQuestion('')
