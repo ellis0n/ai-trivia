@@ -42,16 +42,20 @@ const QuizForm = styled.form`
 const TriviaWrapper = () => {
 	const [topic, setTopic] = useState("");
 	const [question, setQuestion] = useState("");
+	const [score, setScore] = useState(0);
 	const [showQuestion, setShowQuestion] = useState(false);
 	const [showForm, setShowForm] = useState(true);
-	const [score, setScore] = useState(0);
+	const [loading, setLoading] = useState(false);
 
 	const getTopic = async () => {
+		setLoading(true);
+		setShowForm(false);
 		try {
 			const res = await axios.post("http://localhost:3500/query", {
 				topic,
 			});
 			setQuestion(res.data.response);
+			setLoading(false);
 			setShowQuestion(true);
 			setShowForm(false);
 		} catch (error) {
@@ -59,8 +63,17 @@ const TriviaWrapper = () => {
 		}
 	};
 
-	const scoreHandler = (bool) => {
-		if (bool) setScore(score + 1);
+	const scoreHandler = (result) => {
+		if (result) {
+			setScore(score + 1);
+		}
+		setTimeout(() => {
+			setQuestion("");
+			setShowQuestion(false);
+			setLoading(true);
+			console.log(score);
+			getTopic();
+		}, 1000);
 	};
 
 	return (
@@ -91,6 +104,8 @@ const TriviaWrapper = () => {
 					/>
 				</>
 			) : null}
+
+			{loading ? <p>Loading...</p> : null}
 		</>
 	);
 };

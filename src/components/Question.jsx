@@ -28,19 +28,22 @@ const ChoiceWrapper = styled.div`
 `;
 const ScoreWrapper = styled.div`
 	justify-content: center;
-	color: white;
-	border: 2px solid white;
+	color: #fffffff4;
+	background-color: #433c38;
+	border: 2px solid #ededf482;
 	border-radius: 8px;
-	margin: 0 6em;
+	margin: 0 4em;
 `;
 
-const Question = ({ question, scoreHandler, score, getTopic }) => {
+const Question = ({ question, scoreHandler, score }) => {
 	const [answer, setAnswer] = useState(null);
 	const [order, setOrder] = useState([]);
+	const [currentScore, setCurrentScore] = useState(score);
 
 	let data = JSON.parse(question);
 
 	const array = [data.a, data.w1, data.w2, data.w3];
+	console.log(array);
 
 	useEffect(() => {
 		const shuffle = (array) => {
@@ -55,7 +58,7 @@ const Question = ({ question, scoreHandler, score, getTopic }) => {
 
 	const checkAnswer = (e) => {
 		setAnswer(e.target.innerText);
-		if (answer === data.a) {
+		if (e.target.innerText === data.a) {
 			scoreHandler(true);
 		} else {
 			scoreHandler(false);
