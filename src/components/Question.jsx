@@ -38,7 +38,7 @@ const ScoreWrapper = styled.div`
 const Question = ({ question, scoreHandler, score }) => {
     const [answer, setAnswer] = useState(null)
     const [order, setOrder] = useState([])
-    const [currentScore, setCurrentScore] = useState(score)
+
 
     let data = JSON.parse(question)
 
