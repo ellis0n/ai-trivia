@@ -51,12 +51,19 @@ const TriviaWrapper = () => {
     const [loading, setLoading] = useState(false)
 
     const getTopic = async () => {
+        let data = {}
+        if (score[0].correct + score[0].incorrect > 0) {
+            data = { topic: topic, check: true }
+        } else {
+            data = { topic: topic, check: false }
+        }
+
         setLoading(true)
         setShowForm(false)
         try {
             if (score[0].correct + score[0].incorrect < 3) {
                 const res = await axios.post('http://localhost:3500/query', {
-                    topic,
+                    data,
                 })
                 setQuestion(res.data.response)
 
