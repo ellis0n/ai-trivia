@@ -39,12 +39,15 @@ const Question = ({ question, scoreHandler, score }) => {
     const [answer, setAnswer] = useState(null)
     const [order, setOrder] = useState([])
 
+    const data = question
+    console.log(question)
 
-    let data = JSON.parse(question)
-
-    const array = [data.a, data.w1, data.w2, data.w3]
+    const array = [data[1], data[2], data[3], data[4]]
+    console.log('array', array)
+    console.log('question', question)
 
     useEffect(() => {
+        let newArr = array
         const shuffle = (array) => {
             for (let i = array.length - 1; i > 0; i--) {
                 const j = Math.floor(Math.random() * (i + 1))
@@ -52,15 +55,17 @@ const Question = ({ question, scoreHandler, score }) => {
             }
             return array
         }
-        setOrder(shuffle(array))
+        setOrder(shuffle(newArr))
     }, [])
 
     const checkAnswer = (e) => {
         setAnswer(e.target.innerText)
-        if (e.target.innerText === data.a) {
+        if (e.target.innerText === data[1]) {
             scoreHandler(true)
+            console.log('correct!')
         } else {
             scoreHandler(false)
+            console.log('incorrect!')
         }
     }
 
@@ -72,7 +77,7 @@ const Question = ({ question, scoreHandler, score }) => {
                 <p>incorrect: {score[0].incorrect}</p>
             </ScoreWrapper>
             <QuestionWrapper>
-                <h1>{data.q}</h1>
+                <h1>{data[0]}</h1>
             </QuestionWrapper>
             <ChoiceWrapper>
                 {order.map((choice, i) => (
@@ -81,9 +86,9 @@ const Question = ({ question, scoreHandler, score }) => {
                         text={choice}
                         handleClick={checkAnswer}
                         theme={
-                            answer && choice === data.a
+                            answer && choice === data[1]
                                 ? 'correct-btn'
-                                : answer && choice !== data.a
+                                : answer && choice !== data[1]
                                 ? 'wrong-btn'
                                 : 'answer-btn'
                         }

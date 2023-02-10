@@ -57,7 +57,6 @@ const TriviaWrapper = () => {
         } else {
             data = { topic: topic, check: false }
         }
-
         setLoading(true)
         setShowForm(false)
         try {
@@ -83,7 +82,6 @@ const TriviaWrapper = () => {
     }
 
     const scoreHandler = (result) => {
-        console.log(score)
         if (result) {
             setScore([{ correct: score[0].correct + 1, incorrect: score[0].incorrect }])
             console.log(score)
@@ -95,7 +93,6 @@ const TriviaWrapper = () => {
             setQuestion('')
             setShowQuestion(false)
             setLoading(true)
-            console.log(score)
             getTopic()
         }, 1000)
     }
